@@ -13,9 +13,9 @@ export default function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="Pinoo Etkisi Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto object-contain"
+                width={280}
+                height={70}
+                className="h-20 w-auto object-contain"
               />
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
