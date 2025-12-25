@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { supabase } from "@/lib/supabase";
 
 export async function POST(request: Request) {
   try {
@@ -14,31 +15,31 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Supabase entegrasyonu yapılacak
-    // const { data, error } = await supabase
-    //   .from('contact_requests')
-    //   .insert([
-    //     {
-    //       school_name: schoolName,
-    //       contact_person: contactPerson,
-    //       email: email,
-    //       phone: phone,
-    //       student_count: studentCount,
-    //       message: message,
-    //       status: 'pending'
-    //     }
-    //   ]);
+    // Supabase'e kaydet
+    const { data, error } = await supabase
+      .from("contact_requests")
+      .insert([
+        {
+          school_name: schoolName,
+          contact_person: contactPerson,
+          email: email,
+          phone: phone,
+          student_count: studentCount,
+          message: message || "",
+          status: "pending",
+        },
+      ])
+      .select();
 
-    // Şimdilik sadece console'a yazdır
-    console.log("Yeni iletişim talebi:", {
-      schoolName,
-      contactPerson,
-      email,
-      phone,
-      studentCount,
-      message,
-      timestamp: new Date().toISOString(),
-    });
+    if (error) {
+      console.error("Supabase Error:", error);
+      return NextResponse.json(
+        { error: "Veritabanı hatası" },
+        { status: 500 }
+      );
+    }
+
+    console.log("Yeni iletişim talebi kaydedildi:", data);
 
     return NextResponse.json(
       { success: true, message: "Talebiniz başarıyla alındı" },
