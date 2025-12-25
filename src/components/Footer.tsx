@@ -19,8 +19,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
-              Okullara robotik kodlama etkinliği düzenlemenin en kolay ve
-              ekonomik yolu. A&apos;dan Z&apos;ye tam kapsamlı çözüm paketi.
+              STEM etkinlikleri için uygulayıcıları ve sponsorları buluşturan
+              platform. Kiralama, rehberlik ve sponsorluk destekli çözümler.
             </p>
             <div className="flex gap-4">
               <a
@@ -67,18 +67,18 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Hızlı Linkler</h3>
             <ul className="space-y-3">
               <li>
+                <a href="#nedir" className="hover:text-white transition-colors">
+                  Pinoo Etkisi Nedir?
+                </a>
+              </li>
+              <li>
                 <a href="#hizmetler" className="hover:text-white transition-colors">
                   Hizmetler
                 </a>
               </li>
               <li>
-                <a href="#nasil-calisir" className="hover:text-white transition-colors">
-                  Nasıl Çalışır
-                </a>
-              </li>
-              <li>
-                <a href="#referanslar" className="hover:text-white transition-colors">
-                  Referanslar
+                <a href="#sponsorluk" className="hover:text-white transition-colors">
+                  Sponsorluk
                 </a>
               </li>
               <li>

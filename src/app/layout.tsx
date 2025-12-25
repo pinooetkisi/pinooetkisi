@@ -8,15 +8,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pinoo Etkisi | Okullara Robotik Kodlama Etkinlikleri",
+  title: "Pinoo Etkisi | STEM Etkinlikleri için Uygulayıcı & Sponsor Platformu",
   description:
-    "Okulunuzda unutulmaz bir teknoloji festivali yaratın. Pinoo robotik setleri kiralama, etkinlik senaryoları ve tam destek paketi.",
+    "STEM etkinlikleri için uygulayıcıları ve sponsorları buluşturuyoruz. Okullar, belediyeler, STK'lar için kiralama, rehberlik ve sponsorluk destekli çözümler.",
   keywords: [
+    "STEM etkinlik",
     "robotik kodlama",
+    "sponsor eşleştirme",
     "okul etkinliği",
     "pinoo",
-    "STEM eğitimi",
-    "teknoloji festivali",
+    "bilim festivali",
+    "eğitim sponsorluğu",
   ],
 };
 

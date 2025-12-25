@@ -8,9 +8,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+    { href: "#nedir", label: "Nedir?" },
     { href: "#hizmetler", label: "Hizmetler" },
+    { href: "#sponsorluk", label: "Sponsorluk" },
     { href: "#nasil-calisir", label: "Nasıl Çalışır" },
-    { href: "#referanslar", label: "Referanslar" },
     { href: "#iletisim", label: "İletişim" },
   ];
 
