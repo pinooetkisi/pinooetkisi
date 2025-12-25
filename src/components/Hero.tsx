@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-emerald-50" />
 
@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
@@ -17,7 +17,7 @@ export default function Hero() {
               Okullara Özel Robotik Kodlama Çözümü
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Okulunuzda{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">
                 Unutulmaz
@@ -25,7 +25,7 @@ export default function Hero() {
               Bir Teknoloji Festivali Yaratın
             </h1>
 
-            <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-xl">
               Robotik kodlama artık sadece birkaç öğrencinin değil,{" "}
               <strong>tüm okulun</strong> katılabileceği bir deneyim.
               Satın alma, depolama ve bakım derdi olmadan, A&apos;dan Z&apos;ye

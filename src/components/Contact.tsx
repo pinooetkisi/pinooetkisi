@@ -144,7 +144,7 @@ export default function Contact() {
           </div>
 
           {/* Right Content - Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-xl">
+          <div className="bg-white rounded-2xl p-5 sm:p-8 shadow-xl">
             {submitStatus === "success" ? (
               <div className="text-center py-12">
                 <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
