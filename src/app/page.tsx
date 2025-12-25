@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhatIs from "@/components/WhatIs";
+import StemOpportunities from "@/components/StemOpportunities";
 import Stakeholders from "@/components/Stakeholders";
 import Services from "@/components/Services";
 import LMS from "@/components/LMS";
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <WhatIs />
+        <StemOpportunities />
         <Stakeholders />
         <Services />
         <LMS />
