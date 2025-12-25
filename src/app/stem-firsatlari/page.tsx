@@ -4,174 +4,137 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "STEM Fırsatları | Pinoo Etkisi",
+  title: "Ulusal & Uluslararası STEM Fırsatları | Pinoo Etkisi",
   description:
-    "Türkiye ve Avrupa'daki ulusal ve uluslararası STEM programları, projeleri ve yarışmaları hakkında bilgi edinin. Scientix, Erasmus+, eTwinning, TÜBİTAK, TEKNOFEST.",
+    "Scientix, Erasmus+, eTwinning, TÜBİTAK ve TEKNOFEST gibi STEM programlarına hazırlanın. Pinoo Etkisi ile hazırlık, uygulama ve destek süreçlerini kolaylaştırın.",
 };
 
 export default function StemFirsatlari() {
   const programs = [
     {
-      name: "TÜBİTAK",
-      category: "Ulusal",
-      color: "emerald",
-      description:
-        "Türkiye Bilimsel ve Teknolojik Araştırma Kurumu, öğrenciler ve öğretmenler için çeşitli bilim projeleri, yarışmalar ve destekler sunmaktadır.",
-      opportunities: [
-        "4006 Bilim Fuarları",
-        "2204 Lise Öğrencileri Araştırma Projeleri",
-        "2237 Proje Eğitimi Etkinlikleri",
-        "Bilim Olimpiyatları",
-      ],
-      link: "https://www.tubitak.gov.tr",
-    },
-    {
-      name: "TEKNOFEST",
-      category: "Ulusal",
-      color: "orange",
-      description:
-        "Türkiye'nin en büyük havacılık, uzay ve teknoloji festivali. Öğrenciler için robotik, yapay zeka, insansız hava araçları gibi alanlarda yarışmalar düzenlenmektedir.",
-      opportunities: [
-        "Roket Yarışması",
-        "İnsansız Hava Araçları",
-        "Robotik Yarışmaları",
-        "Yapay Zeka Yarışması",
-        "Teknoloji Geliştirme Yarışmaları",
-      ],
-      link: "https://www.teknofest.org",
-    },
-    {
+      id: "scientix",
+      icon: "🔬",
       name: "Scientix",
-      category: "Uluslararası",
       color: "blue",
       description:
-        "Avrupa Komisyonu destekli STEM eğitimi topluluğu. Öğretmenler için kaynaklar, projeler ve mesleki gelişim fırsatları sunmaktadır.",
-      opportunities: [
-        "STEM Öğretmen Akademisi",
-        "Proje Kaynakları ve Materyaller",
-        "Avrupa STEM Ağı",
-        "Mesleki Gelişim Kursları",
+        "Scientix, Avrupa genelinde STEM eğitimini destekleyen, öğretmen ve okul odaklı bir iş birliği ağıdır.",
+      supports: [
+        "Scientix içeriklerine uygun uygulamalı STEM etkinlikleri oluşturulur",
+        "Öğretmenlerin sınıf içi ve okul temelli STEM uygulamaları güçlendirilir",
+        "Teorik içerikler sahada somut deneyimlere dönüştürülür",
       ],
-      link: "https://www.scientix.eu",
+      highlight: "Pinoo Etkisi, Scientix etkinliklerini sınıfın dışına taşır.",
     },
     {
+      id: "erasmus",
+      icon: "🇪🇺",
       name: "Erasmus+",
-      category: "Uluslararası",
+      subtitle: "Okul Eğitimi – KA1 / KA2",
       color: "indigo",
       description:
-        "Avrupa Birliği'nin eğitim, gençlik ve spor programı. Okullar için ortaklık projeleri ve öğretmen/öğrenci hareketliliği fırsatları sunmaktadır.",
-      opportunities: [
-        "KA1 - Bireylerin Öğrenme Hareketliliği",
-        "KA2 - Kurumlar Arası İşbirliği",
-        "Okul Ortaklıkları",
-        "Öğretmen Hareketliliği",
+        "Erasmus+, okullar arası iş birliği, öğretmen gelişimi ve yenilikçi eğitim projelerini destekleyen Avrupa Birliği programıdır.",
+      supports: [
+        "Erasmus+ projeleri için uygulanabilir STEM altyapısı sunulur",
+        "Proje fikirleri, öğrenci ve öğretmenlerle sahada test edilir",
+        "Proje çıktıları somut ve ölçülebilir hâle getirilir",
       ],
-      link: "https://erasmus-plus.ec.europa.eu",
+      highlight: "Pinoo Etkisi, Erasmus+ projeleri için \"uygulanabilirlik\" güvencesi sağlar.",
     },
     {
+      id: "etwinning",
+      icon: "🌐",
       name: "eTwinning",
-      category: "Uluslararası",
       color: "purple",
       description:
-        "Avrupa okulları için ücretsiz çevrimiçi platform. Öğretmenler projeler oluşturabilir, işbirliği yapabilir ve deneyimlerini paylaşabilir.",
-      opportunities: [
-        "Uluslararası Okul Projeleri",
-        "Çevrimiçi İşbirliği",
-        "Ulusal ve Avrupa Kalite Etiketi",
-        "eTwinning Ödülleri",
+        "eTwinning, Avrupa'daki okulların çevrim içi projeler ve iş birlikleri yürüttüğü bir platformdur.",
+      supports: [
+        "eTwinning projeleri için yüz yüze ve uygulamalı STEM etkinlikleri sağlanır",
+        "Çevrim içi projeler, gerçek sınıf uygulamalarıyla desteklenir",
+        "Projelerin kalite ve sürdürülebilirliği artırılır",
       ],
-      link: "https://school-education.ec.europa.eu/en/etwinning",
+      highlight: "Pinoo Etkisi, eTwinning projelerini sahaya taşır.",
+    },
+    {
+      id: "tubitak",
+      icon: "🔬",
+      name: "TÜBİTAK",
+      subtitle: "4006 – 2204 – 2202 vb.",
+      color: "emerald",
+      description:
+        "TÜBİTAK, öğrenci ve öğretmenlerin bilimsel araştırma, proje geliştirme ve sergileme süreçlerini destekler.",
+      supports: [
+        "Proje fikirleri için deneysel ve uygulamalı STEM ortamı sağlanır",
+        "Prototip geliştirme süreçleri desteklenir",
+        "Sergi ve şenlik hazırlıkları kolaylaştırılır",
+      ],
+      highlight: "Pinoo Etkisi, TÜBİTAK projelerini fikirden uygulamaya taşır.",
+    },
+    {
+      id: "teknofest",
+      icon: "🚀",
+      name: "TEKNOFEST",
+      color: "orange",
+      description:
+        "TEKNOFEST, Türkiye'nin en büyük teknoloji ve inovasyon festivali ve yarışma platformudur.",
+      supports: [
+        "Yarışmalara hazırlık için robotik ve STEM uygulama altyapısı sunulur",
+        "Takım çalışması ve problem çözme becerileri geliştirilir",
+        "Deneme ve hazırlık süreci güvenli şekilde yürütülür",
+      ],
+      highlight: "TEKNOFEST'e katılmadan önce Pinoo Etkisi ile hazır olun.",
     },
   ];
 
-  const supportAreas = [
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-        </svg>
-      ),
-      title: "Proje Hazırlığı",
-      description: "Program gereksinimlerine uygun proje konusu belirleme ve başvuru dosyası hazırlama desteği.",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-        </svg>
-      ),
-      title: "STEM Atölyeleri",
-      description: "Robotik, kodlama ve elektronik atölyeleri ile öğrencilerin proje becerilerini geliştirme.",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
-      title: "Öğretmen Eğitimi",
-      description: "STEM pedagojisi ve proje yönetimi konularında öğretmenlere yönelik profesyonel gelişim programları.",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
-      title: "Ekipman Desteği",
-      description: "Pinoo robotik setleri ve STEM materyalleri ile proje geliştirme sürecinde teknik altyapı sağlama.",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      title: "Sponsor Eşleştirme",
-      description: "Projeleriniz için kurumsal sponsor bulma ve sürdürülebilir kaynak oluşturma desteği.",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
-      title: "Süreç Takibi",
-      description: "Başvuru sürecinden proje tamamlamaya kadar her aşamada rehberlik ve ilerleme takibi.",
-    },
+  const problems = [
+    "Uygulama altyapısının yetersizliği",
+    "Öğrencilerin yeterince hazır olmaması",
+    "Öğretmenlerin süreçte yalnız kalması",
+    "Zaman ve kaynak kısıtları",
+  ];
+
+  const solutions = [
+    "Uygulama ve deneme ortamı",
+    "Öğretmenlere online danışmanlık",
+    "Öğrenciler için hazırlık süreci (Pinoo 360 LMS)",
+    "Gerekirse sponsorluk desteği",
   ];
 
   const getColorClasses = (color: string) => {
-    const colors: Record<string, { bg: string; text: string; badge: string; border: string }> = {
-      emerald: {
-        bg: "bg-emerald-50",
-        text: "text-emerald-700",
-        badge: "bg-emerald-100 text-emerald-700",
-        border: "border-emerald-200",
-      },
-      orange: {
-        bg: "bg-orange-50",
-        text: "text-orange-700",
-        badge: "bg-orange-100 text-orange-700",
-        border: "border-orange-200",
-      },
+    const colors: Record<string, { bg: string; bgLight: string; text: string; border: string; gradient: string }> = {
       blue: {
-        bg: "bg-blue-50",
-        text: "text-blue-700",
-        badge: "bg-blue-100 text-blue-700",
+        bg: "bg-blue-600",
+        bgLight: "bg-blue-50",
+        text: "text-blue-600",
         border: "border-blue-200",
+        gradient: "from-blue-600 to-blue-700",
       },
       indigo: {
-        bg: "bg-indigo-50",
-        text: "text-indigo-700",
-        badge: "bg-indigo-100 text-indigo-700",
+        bg: "bg-indigo-600",
+        bgLight: "bg-indigo-50",
+        text: "text-indigo-600",
         border: "border-indigo-200",
+        gradient: "from-indigo-600 to-indigo-700",
       },
       purple: {
-        bg: "bg-purple-50",
-        text: "text-purple-700",
-        badge: "bg-purple-100 text-purple-700",
+        bg: "bg-purple-600",
+        bgLight: "bg-purple-50",
+        text: "text-purple-600",
         border: "border-purple-200",
+        gradient: "from-purple-600 to-purple-700",
+      },
+      emerald: {
+        bg: "bg-emerald-600",
+        bgLight: "bg-emerald-50",
+        text: "text-emerald-600",
+        border: "border-emerald-200",
+        gradient: "from-emerald-600 to-emerald-700",
+      },
+      orange: {
+        bg: "bg-orange-600",
+        bgLight: "bg-orange-50",
+        text: "text-orange-600",
+        border: "border-orange-200",
+        gradient: "from-orange-600 to-orange-700",
       },
     };
     return colors[color] || colors.blue;
@@ -182,85 +145,165 @@ export default function StemFirsatlari() {
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-blue-50 to-white py-16 sm:py-20">
+        <section className="bg-gradient-to-b from-blue-50 via-white to-white py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-4xl mx-auto">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium mb-6"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium mb-8"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
                 Ana Sayfaya Dön
               </Link>
+              <span className="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                Ulusal & Uluslararası STEM Fırsatları
+              </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Ulusal ve Uluslararası
-                <span className="text-blue-600"> STEM Fırsatları</span>
+                Ulusal ve Uluslararası STEM Programlarına{" "}
+                <span className="text-blue-600">Hazırlanın</span>
               </h1>
+              <p className="text-lg sm:text-xl text-gray-600 mb-4">
+                Türkiye'de ve Avrupa'da öğrenci ve öğretmenlere yönelik birçok STEM programı,
+                proje ve yarışma bulunmaktadır.
+              </p>
               <p className="text-lg sm:text-xl text-gray-600">
-                Türkiye ve Avrupa'da öğrenci ve öğretmenlere yönelik resmî STEM programları,
-                projeleri ve yarışmaları keşfedin. Pinoo Etkisi ile bu fırsatlara hazırlanın.
+                <strong className="text-gray-900">Pinoo Etkisi,</strong> bu fırsatlara katılmak isteyen kurumlar için
+                hazırlık, uygulama ve destek süreçlerini kolaylaştırır.
               </p>
             </div>
           </div>
         </section>
 
+        {/* What Pinoo Provides Section */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-10">
+                <span className="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                  Ekosistemde Yerimiz
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                  Pinoo Etkisi Ne Sağlar?
+                </h2>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-8 sm:p-10 border border-gray-100">
+                <p className="text-lg text-gray-700 mb-6">
+                  <strong className="text-gray-900">Pinoo Etkisi;</strong> ulusal ve uluslararası STEM programlarının yerine geçmez.
+                  Bu programlara katılımı güçlendiren, uygulamayı mümkün kılan ve süreçleri sürdürülebilir hâle getiren bir{" "}
+                  <span className="text-blue-600 font-semibold">destek modelidir.</span>
+                </p>
+                <p className="text-lg text-gray-700">
+                  Öğretmenler için rehberlik, öğrenciler için uygulama pratiği ve kurumlar için güvenli bir altyapı sunar.
+                </p>
+
+                <div className="mt-8 grid sm:grid-cols-3 gap-4">
+                  <div className="bg-white rounded-xl p-5 shadow-sm">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Öğretmenler İçin</h3>
+                    <p className="text-sm text-gray-600">Rehberlik ve danışmanlık</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 shadow-sm">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-3">
+                      <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Öğrenciler İçin</h3>
+                    <p className="text-sm text-gray-600">Uygulama pratiği</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-5 shadow-sm">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+                      <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Kurumlar İçin</h3>
+                    <p className="text-sm text-gray-600">Güvenli altyapı</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Programs Section */}
-        <section className="py-16 sm:py-20">
+        <section className="py-16 sm:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <span className="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">
-                Programlar
+                Desteklenen Programlar
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                Katılabileceğiniz STEM Programları
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+                STEM Programları ve Pinoo Etkisi Desteği
               </h2>
             </div>
 
-            <div className="space-y-6">
-              {programs.map((program, index) => {
+            <div className="space-y-8">
+              {programs.map((program) => {
                 const colors = getColorClasses(program.color);
                 return (
                   <div
-                    key={index}
-                    className={`rounded-2xl border ${colors.border} ${colors.bg} p-6 sm:p-8`}
+                    key={program.id}
+                    id={program.id}
+                    className={`bg-white rounded-3xl overflow-hidden shadow-sm border ${colors.border}`}
                   >
-                    <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-4">
-                          <h3 className={`text-2xl font-bold ${colors.text}`}>{program.name}</h3>
-                          <span className={`px-3 py-1 rounded-full text-xs font-semibold ${colors.badge}`}>
-                            {program.category}
-                          </span>
+                    <div className={`bg-gradient-to-r ${colors.gradient} px-6 sm:px-8 py-4`}>
+                      <div className="flex items-center gap-3">
+                        <span className="text-3xl">{program.icon}</span>
+                        <div>
+                          <h3 className="text-xl sm:text-2xl font-bold text-white">{program.name}</h3>
+                          {program.subtitle && (
+                            <p className="text-white/80 text-sm">{program.subtitle}</p>
+                          )}
                         </div>
-                        <p className="text-gray-700 mb-4">{program.description}</p>
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-gray-900 mb-2">Fırsatlar:</h4>
-                          <ul className="grid sm:grid-cols-2 gap-2">
-                            {program.opportunities.map((opp, i) => (
-                              <li key={i} className="flex items-center gap-2 text-gray-600">
-                                <svg className={`w-4 h-4 ${colors.text}`} fill="currentColor" viewBox="0 0 20 20">
+                      </div>
+                    </div>
+
+                    <div className="p-6 sm:p-8">
+                      <div className="grid lg:grid-cols-2 gap-8">
+                        {/* What is it */}
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            <span className={`w-2 h-2 rounded-full ${colors.bg}`}></span>
+                            {program.name} Nedir?
+                          </h4>
+                          <p className="text-gray-600">{program.description}</p>
+                        </div>
+
+                        {/* How Pinoo helps */}
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-blue-600"></span>
+                            Pinoo Etkisi ile Nasıl Desteklenir?
+                          </h4>
+                          <ul className="space-y-2">
+                            {program.supports.map((support, i) => (
+                              <li key={i} className="flex items-start gap-2 text-gray-600">
+                                <svg className={`w-5 h-5 ${colors.text} flex-shrink-0 mt-0.5`} fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                 </svg>
-                                {opp}
+                                <span>{support}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
                       </div>
-                      <div className="lg:text-right">
-                        <a
-                          href={program.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-colors ${colors.badge} hover:opacity-80`}
-                        >
-                          Resmi Site
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+
+                      {/* Highlight */}
+                      <div className={`mt-6 ${colors.bgLight} rounded-xl p-4 border ${colors.border}`}>
+                        <p className={`font-semibold ${colors.text} flex items-center gap-2`}>
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                           </svg>
-                        </a>
+                          {program.highlight}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -270,105 +313,155 @@ export default function StemFirsatlari() {
           </div>
         </section>
 
-        {/* How Pinoo Helps Section */}
-        <section className="py-16 sm:py-20 bg-gray-50">
+        {/* Common Problems & Solutions Section */}
+        <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <span className="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">
-                Nasıl Destekliyoruz
+                Ortak Sorun – Ortak Çözüm
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-                Pinoo Etkisi ile Farka Hazırlanın
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+                Bu Programlara Katılmak Neden Zor?
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Bu programlara katılmak isteyen kurumlar için hazırlık, uygulama ve
-                destek süreçlerini kolaylaştırıyoruz.
-              </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {supportAreas.map((area, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
-                    {area.icon}
+            <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Problems */}
+              <div className="bg-red-50 rounded-2xl p-6 sm:p-8 border border-red-100">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{area.title}</h3>
-                  <p className="text-gray-600">{area.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900">Karşılaşılan Sorunlar</h3>
                 </div>
-              ))}
+                <ul className="space-y-4">
+                  {problems.map((problem, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="w-6 h-6 bg-red-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      <span className="text-gray-700">{problem}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Solutions */}
+              <div className="bg-emerald-50 rounded-2xl p-6 sm:p-8 border border-emerald-100">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">Pinoo Etkisi Ne Sağlar?</h3>
+                </div>
+                <ul className="space-y-4">
+                  {solutions.map((solution, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="w-6 h-6 bg-emerald-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      <span className="text-gray-700">{solution}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Message Section */}
-        <section className="py-16 sm:py-20">
+        {/* Sponsorship Connection Section */}
+        <section className="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 sm:p-12 text-center text-white">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                Bu Programların Alternatifi Değiliz
+            <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-lg border border-gray-100 text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Bu Fırsatlara Erişim Herkes İçin Mümkün Olsun
               </h2>
-              <p className="text-lg sm:text-xl text-blue-100 mb-8">
-                Pinoo Etkisi, TÜBİTAK, TEKNOFEST, Erasmus+ ve diğer programlara
-                <strong className="text-white"> güçlü ve sürdürülebilir bir hazırlık süreci</strong> sunar.
-                Kurumunuzu bu fırsatlara en iyi şekilde hazırlıyoruz.
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Ulusal ve uluslararası STEM programlarına katılım, çoğu zaman ek kaynak gerektirir.
+                Pinoo Etkisi, bu süreçte etkinlik düzenleyicilerle sponsorları bir araya getirerek{" "}
+                <strong className="text-gray-900">fırsat eşitliğini güçlendirir.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/#iletisim"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3.5 rounded-xl transition-colors"
                 >
-                  Hemen Başvurun
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
+                  Bu Programlar İçin Sponsor Ara
                 </Link>
                 <Link
-                  href="/#nasil-calisir"
-                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors"
+                  href="/#iletisim"
+                  className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3.5 rounded-xl transition-colors"
                 >
-                  Nasıl Çalışır?
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                  STEM İçin Sponsor Ol
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-16 sm:py-20 bg-gray-50">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                Sıkça Sorulan Sorular
+        {/* Closing CTA Section */}
+        <section className="py-16 sm:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 sm:p-12 text-center text-white">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+                STEM Ekosistemine Güçlü Bir Adım Atın
               </h2>
+              <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Hangi programa katılmak istediğinizden bağımsız olarak,
+                Pinoo Etkisi ile süreci güvenle planlayın ve hayata geçirin.
+              </p>
+              <Link
+                href="/#iletisim"
+                className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
+              >
+                Bizimle İletişime Geçin
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
+          </div>
+        </section>
 
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Pinoo Etkisi, TÜBİTAK veya TEKNOFEST'in resmi bir parçası mı?",
-                  a: "Hayır, Pinoo Etkisi bu programların resmi bir parçası değildir. Ancak kurumların bu programlara hazırlanmasına yardımcı olan bağımsız bir destek platformuyuz.",
-                },
-                {
-                  q: "Hangi okullar bu destekten faydalanabilir?",
-                  a: "İlkokul, ortaokul ve liseler başta olmak üzere tüm eğitim kurumları, belediyeler, STK'lar ve özel kuruluşlar hizmetlerimizden faydalanabilir.",
-                },
-                {
-                  q: "Destekleriniz ücretli mi?",
-                  a: "Hizmetlerimizin bir kısmı sponsor destekli olarak ücretsiz sunulabilmektedir. Detaylı bilgi için bizimle iletişime geçin.",
-                },
-                {
-                  q: "Proje başvurusu için son tarihler konusunda bilgilendirme yapıyor musunuz?",
-                  a: "Evet, kayıtlı kurumlarımıza program takvimlerini ve önemli tarihleri düzenli olarak bildiriyoruz.",
-                },
-              ].map((faq, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                  <p className="text-gray-600">{faq.a}</p>
-                </div>
-              ))}
+        {/* Strategic Message Section */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                <span className="text-gray-600">&quot;Alternatif sistem&quot; <strong className="text-gray-900">değil</strong></span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                <span className="text-gray-600">&quot;Hazırlık ve uygulama köprüsü&quot;</span>
+              </div>
             </div>
           </div>
         </section>
