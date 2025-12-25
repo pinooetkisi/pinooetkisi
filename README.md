@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pinoo Etkisi
 
-## Getting Started
+Okullara robotik kodlama etkinliği düzenleme hizmeti sunan profesyonel landing page.
 
-First, run the development server:
+## Proje Hakkında
+
+**Pinoo Etkisi**, okullara robotik kodlama setleri kiralama ve tam kapsamlı etkinlik organizasyonu hizmeti sunan bir platformdur. Bu web sitesi, hizmeti tanıtmak, güven oluşturmak ve potansiyel müşterilerden teklif talebi almak amacıyla tasarlanmıştır.
+
+### Hedef Kitle
+- Okul yöneticileri
+- Bilişim teknolojileri öğretmenleri
+- Eğitim koordinatörleri
+
+### Temel Değer Önermeleri
+- Satın alma yerine kiralama ile maliyet avantajı
+- Lojistik, bakım ve depolama derdi yok
+- Müfredata uyumlu hazır etkinlik senaryoları
+- Etkinlik öncesi, sırası ve sonrası tam destek
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Dil:** TypeScript
+- **Styling:** Tailwind CSS
+- **Veritabanı:** Supabase (PostgreSQL)
+- **Hosting:** Vercel
+- **Versiyon Kontrolü:** GitHub
+
+## Kurulum
 
 ```bash
+# Repoyu klonla
+git clone https://github.com/pinooetkisi/pinooetkisi.git
+cd pinooetkisi
+
+# Bağımlılıkları yükle
+npm install
+
+# Environment variables oluştur
+cp .env.example .env.local
+# .env.local dosyasını düzenle
+
+# Geliştirme sunucusunu başlat
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tarayıcıda [http://localhost:3000](http://localhost:3000) adresini aç.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-## Learn More
+## Proje Yapısı
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Ana sayfa
+│   ├── globals.css     # Global stiller
+│   └── api/            # API endpoints
+├── components/         # React bileşenleri
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── Problem.tsx
+│   ├── Solution.tsx
+│   ├── Services.tsx
+│   ├── Testimonials.tsx
+│   ├── Contact.tsx
+│   └── Footer.tsx
+└── lib/
+    └── supabase.ts     # Supabase client
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Komutlar
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Komut | Açıklama |
+|-------|----------|
+| `npm run dev` | Geliştirme sunucusu (localhost:3000) |
+| `npm run build` | Production build |
+| `npm run start` | Production sunucusu |
+| `npm run lint` | ESLint kontrolü |
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Proje Vercel'e otomatik deploy edilir. `main` branch'e yapılan her push, production'a deploy tetikler.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Production URL:** [pinooetkisi.vercel.app](https://pinooetkisi.vercel.app)
+
+## Dokümantasyon
+
+Detaylı teknik dokümantasyon için: [ARCHITECTURE.md](./ARCHITECTURE.md)
+
+## Lisans
+
+Tüm hakları saklıdır.
+
+---
+
+**Geliştirici:** Pinoo Etkisi
+**Email:** pinooetkisi@gmail.com
