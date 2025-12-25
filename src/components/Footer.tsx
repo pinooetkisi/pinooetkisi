@@ -9,17 +9,14 @@ export default function Footer() {
         <div className="py-12 grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
+            <Link href="/" className="mb-4 inline-block">
               <Image
                 src="/images/logo.png"
                 alt="Pinoo Etkisi Logo"
-                width={40}
+                width={120}
                 height={40}
-                className="w-10 h-10 object-contain"
+                className="h-10 w-auto object-contain"
               />
-              <span className="text-xl font-bold text-white">
-                Pinoo <span className="text-blue-400">Etkisi</span>
-              </span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
               Okullara robotik kodlama etkinliği düzenlemenin en kolay ve
