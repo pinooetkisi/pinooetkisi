@@ -5,10 +5,10 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const { schoolName, contactPerson, email, phone, studentCount, message } = body;
+    const { requestType, orgName, contactPerson, email, phone, message } = body;
 
     // Validation
-    if (!schoolName || !contactPerson || !email || !phone || !studentCount) {
+    if (!requestType || !orgName || !contactPerson || !email || !phone) {
       return NextResponse.json(
         { error: "Tüm zorunlu alanları doldurun" },
         { status: 400 }
@@ -20,11 +20,11 @@ export async function POST(request: Request) {
       .from("contact_requests")
       .insert([
         {
-          school_name: schoolName,
+          request_type: requestType,
+          org_name: orgName,
           contact_person: contactPerson,
           email: email,
           phone: phone,
-          student_count: studentCount,
           message: message || "",
           status: "pending",
         },

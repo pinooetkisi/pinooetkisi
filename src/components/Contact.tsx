@@ -42,11 +42,11 @@ export default function Contact() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          schoolName: formData.orgName,
+          requestType: formData.requestType,
+          orgName: formData.orgName,
           contactPerson: formData.contactPerson,
           email: formData.email,
           phone: formData.phone,
-          studentCount: formData.requestType,
           message: formData.message,
         }),
       });
