@@ -18,15 +18,15 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
           <Link href="/">
             <Image
               src="/images/logo.png"
               alt="Pinoo Etkisi Logo"
-              width={280}
-              height={70}
-              className="h-10 sm:h-14 lg:h-16 w-auto object-contain"
+              width={320}
+              height={80}
+              className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
             />
           </Link>
 
