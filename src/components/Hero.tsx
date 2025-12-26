@@ -53,7 +53,7 @@ export default function Hero() {
               Sponsor Arıyorum
             </a>
             <a
-              href="#sponsor-ol"
+              href="/sponsor-ol"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:shadow-lg hover:shadow-emerald-600/25"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
