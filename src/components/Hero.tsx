@@ -1,24 +1,36 @@
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/header-video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/80 to-white/90" />
+      </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
+      {/* Decorative elements - reduced opacity */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse z-10" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 z-10" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-8 shadow-sm">
             <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
             STEM Etkinlikleri Platformu
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6 drop-shadow-sm">
             STEM Etkinlikleri İçin{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600">
               Uygulayıcıları ve Sponsorları
@@ -27,7 +39,7 @@ export default function Hero() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-10">
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">
             Okullar, bilim atölyeleri, BİLSEM&apos;ler, belediyeler ve STK&apos;lar için
             <strong> kiralama, rehberlik ve sponsorluk destekli</strong> STEM çözümleri
           </p>
@@ -64,20 +76,20 @@ export default function Hero() {
           </div>
 
           {/* Quick Stats */}
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-12 mt-16 pt-8 border-t border-gray-200">
-            <div className="text-center">
+          <div className="flex flex-wrap justify-center gap-8 sm:gap-12 mt-16 pt-8 border-t border-gray-300/50">
+            <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl px-6 py-3">
               <div className="text-3xl sm:text-4xl font-bold text-gray-900">50+</div>
               <div className="text-gray-600 text-sm">Etkinlik</div>
             </div>
-            <div className="text-center">
+            <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl px-6 py-3">
               <div className="text-3xl sm:text-4xl font-bold text-gray-900">5000+</div>
               <div className="text-gray-600 text-sm">Öğrenci</div>
             </div>
-            <div className="text-center">
+            <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl px-6 py-3">
               <div className="text-3xl sm:text-4xl font-bold text-gray-900">30+</div>
               <div className="text-gray-600 text-sm">Kurum</div>
             </div>
-            <div className="text-center">
+            <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl px-6 py-3">
               <div className="text-3xl sm:text-4xl font-bold text-gray-900">15+</div>
               <div className="text-gray-600 text-sm">Sponsor</div>
             </div>
@@ -86,8 +98,8 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
+        <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>
