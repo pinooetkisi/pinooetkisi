@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import SponsorForm from "@/components/SponsorForm";
 
 export const metadata: Metadata = {
   title: "Sponsor Ol | Pinoo Etkisi",
@@ -108,15 +109,15 @@ export default function SponsorOl() {
                 <strong className="text-gray-900">Pinoo Etkisi;</strong> STEM eğitimleri, yarışmaları ve festivalleri için
                 destek olmak isteyen sponsorları, gerçek ihtiyaçlarla ve ölçülebilir sosyal etkiyle buluşturur.
               </p>
-              <Link
-                href="#iletisim-formu"
+              <a
+                href="#sponsor-basvuru-formu"
                 className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl transition-colors shadow-lg shadow-emerald-600/20"
               >
                 Sponsor Ol
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -325,26 +326,10 @@ export default function SponsorOl() {
           </div>
         </section>
 
-        {/* Closing CTA Section */}
-        <section id="iletisim-formu" className="py-16 sm:py-20 bg-white">
+        {/* Sponsor Application Form */}
+        <section id="sponsor-basvuru-formu" className="py-16 sm:py-20 bg-gradient-to-b from-white to-emerald-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-8 sm:p-12 text-center text-white">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-                Sponsor Olmak İçin İlk Adımı Atın
-              </h2>
-              <p className="text-lg sm:text-xl text-emerald-100 mb-8">
-                STEM etkinliklerine destek olmak ve sosyal etki yaratmak için bizimle iletişime geçin.
-              </p>
-              <Link
-                href="/#iletisim"
-                className="inline-flex items-center justify-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors shadow-lg"
-              >
-                Sponsor Ol
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
+            <SponsorForm />
           </div>
         </section>
 
