@@ -1,12 +1,4 @@
 export default function HowItWorks() {
-  const implementerSteps = [
-    { step: "1", title: "Kayıt Ol", desc: "Kurum bilgilerinizi girin" },
-    { step: "2", title: "Plan Oluştur", desc: "Etkinlik detaylarını belirleyin" },
-    { step: "3", title: "Sponsor Ara", desc: "İsterseniz sponsor eşleştirin" },
-    { step: "4", title: "Destek Al", desc: "Set ve rehberlik sağlayın" },
-    { step: "5", title: "Uygula", desc: "Etkinliğinizi gerçekleştirin" },
-  ];
-
   const sponsorSteps = [
     { step: "1", title: "Kayıt Ol", desc: "Sponsor profilinizi oluşturun" },
     { step: "2", title: "İlgi Alanı Seç", desc: "Desteklemek istediğiniz alanlar" },
@@ -32,7 +24,7 @@ export default function HowItWorks() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Implementer Flow */}
+          {/* Implementer Flow - Updated with branching */}
           <div>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -44,24 +36,84 @@ export default function HowItWorks() {
             </div>
 
             <div className="space-y-4">
-              {implementerSteps.map((item, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div className="flex-1 bg-white rounded-xl p-4 border border-gray-200">
-                    <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                    <p className="text-sm text-gray-600">{item.desc}</p>
-                  </div>
-                  {index < implementerSteps.length - 1 && (
-                    <div className="hidden sm:block w-6">
-                      <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
-                    </div>
-                  )}
+              {/* Step 1 */}
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                  1
                 </div>
-              ))}
+                <div className="flex-1 bg-white rounded-xl p-4 border border-gray-200">
+                  <h4 className="font-semibold text-gray-900">Kayıt Ol</h4>
+                  <p className="text-sm text-gray-600">Kurum bilgilerinizi girin</p>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                  2
+                </div>
+                <div className="flex-1 bg-white rounded-xl p-4 border border-gray-200">
+                  <h4 className="font-semibold text-gray-900">Plan Oluştur</h4>
+                  <p className="text-sm text-gray-600">Etkinlik detaylarını belirleyin</p>
+                </div>
+              </div>
+
+              {/* Branching Point - Step 3 */}
+              <div className="relative">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    3
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-gray-500 mb-3">Durumunuza göre seçin:</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {/* Option A: Direct Service */}
+                      <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 hover:border-blue-400 transition-colors">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">A</span>
+                          </div>
+                          <h4 className="font-semibold text-blue-700 text-sm">Doğrudan Hizmet Al</h4>
+                        </div>
+                        <p className="text-xs text-gray-600">Bütçeniz varsa direkt hizmet alın</p>
+                      </div>
+
+                      {/* Option B: Search Sponsor */}
+                      <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-4 hover:border-purple-400 transition-colors">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">B</span>
+                          </div>
+                          <h4 className="font-semibold text-purple-700 text-sm">Sponsor Ara</h4>
+                        </div>
+                        <p className="text-xs text-gray-600">Desteğe ihtiyacınız varsa sponsor bulun</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                  4
+                </div>
+                <div className="flex-1 bg-white rounded-xl p-4 border border-gray-200">
+                  <h4 className="font-semibold text-gray-900">Destek Al</h4>
+                  <p className="text-sm text-gray-600">Set, rehberlik ve içerik desteği sağlayın</p>
+                </div>
+              </div>
+
+              {/* Step 5 */}
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                  5
+                </div>
+                <div className="flex-1 bg-gradient-to-r from-blue-50 to-emerald-50 rounded-xl p-4 border-2 border-blue-200">
+                  <h4 className="font-semibold text-gray-900">Uygula</h4>
+                  <p className="text-sm text-gray-600">Etkinliğinizi başarıyla gerçekleştirin</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -79,20 +131,13 @@ export default function HowItWorks() {
             <div className="space-y-4">
               {sponsorSteps.map((item, index) => (
                 <div key={index} className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                  <div className="w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
                     {item.step}
                   </div>
-                  <div className="flex-1 bg-white rounded-xl p-4 border border-gray-200">
+                  <div className={`flex-1 rounded-xl p-4 border ${index === sponsorSteps.length - 1 ? 'bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-200' : 'bg-white border-gray-200'}`}>
                     <h4 className="font-semibold text-gray-900">{item.title}</h4>
                     <p className="text-sm text-gray-600">{item.desc}</p>
                   </div>
-                  {index < sponsorSteps.length - 1 && (
-                    <div className="hidden sm:block w-6">
-                      <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
