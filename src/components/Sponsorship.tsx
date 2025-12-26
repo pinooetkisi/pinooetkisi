@@ -104,7 +104,7 @@ export default function Sponsorship() {
             </div>
 
             <a
-              href="#iletisim"
+              href="/sponsor-ara"
               className="inline-flex items-center justify-center gap-2 w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-4 rounded-xl font-semibold transition-all hover:shadow-lg"
             >
               Etkinliğim İçin Sponsor Ara
