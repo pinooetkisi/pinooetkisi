@@ -44,7 +44,7 @@ export default function Hero() {
               Etkinlik Düzenlemek İstiyorum
             </a>
             <a
-              href="#sponsorluk"
+              href="/sponsor-ara"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:shadow-lg hover:shadow-purple-600/25"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
