@@ -18,13 +18,13 @@ export default function StemThemes() {
 
   const themes: Theme[] = [
     {
-      id: "robotik-kodlama",
+      id: "akilli-tarim",
       level: "Ortaokul",
       levelColor: "blue",
-      theme: "Robotik & Kodlama",
-      topic: "Çizgi İzleyen Robot Tasarımı",
-      image: "/images/themes/robotik-kodlama.jpg",
-      pdfUrl: "/docs/robotik-kodlama.pdf",
+      theme: "Akıllı Tarım",
+      topic: "Geleceğin Tarım Mühendisleri",
+      image: "/images/themes/akilli-tarim.jpg",
+      pdfUrl: "/docs/gelecegin-tarim-muhendisleri.pdf",
     },
     {
       id: "yenilenebilir-enerji",
