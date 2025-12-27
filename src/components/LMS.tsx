@@ -7,41 +7,6 @@ export default function LMS() {
 
   const slides = [
     {
-      id: "lms",
-      badge: "Online Eğitim Platformu",
-      title: "Pinoo 360 LMS",
-      description:
-        "Öğrenci ve katılımcıların etkinlik öncesi hazırlık yapabilmesi için interaktif online eğitim platformu.",
-      color: "purple",
-      listTitle: "Kimler İçin?",
-      listItems: [
-        "Daha önce robotik yapmamış öğrenciler",
-        "Farklı kurumlardan gelen karma gruplar",
-        "Yarışma veya festival öncesi hazırlık yapanlar",
-      ],
-      ctaText: "LMS Hakkında Bilgi Al",
-      ctaLink: "#iletisim",
-      benefits: [
-        {
-          icon: "🎯",
-          title: "Eşit Başlangıç",
-          description: "Tüm katılımcılar aynı seviyeden başlar",
-        },
-        {
-          icon: "⏱️",
-          title: "Kendi Hızında Öğrenme",
-          description: "Esnek zamanlı, bireysel ilerleme",
-        },
-        {
-          icon: "🚀",
-          title: "Verimli Uygulama",
-          description: "Etkinlik günü maksimum performans",
-        },
-      ],
-      visualIcon: "💻",
-      visualText: "Video Dersler • Quizler • Simülasyonlar",
-    },
-    {
       id: "rehber",
       badge: "Etkinlik Kurgusu & Rehber",
       title: "Anahtar Teslim Etkinlik Desteği",
@@ -76,6 +41,41 @@ export default function LMS() {
       ],
       visualIcon: "🎯",
       visualText: "Planlama • Koordinasyon • Uygulama",
+    },
+    {
+      id: "lms",
+      badge: "Online Eğitim Platformu",
+      title: "Pinoo 360 LMS",
+      description:
+        "Öğrenci ve katılımcıların etkinlik öncesi hazırlık yapabilmesi için interaktif online eğitim platformu.",
+      color: "purple",
+      listTitle: "Kimler İçin?",
+      listItems: [
+        "Daha önce robotik yapmamış öğrenciler",
+        "Farklı kurumlardan gelen karma gruplar",
+        "Yarışma veya festival öncesi hazırlık yapanlar",
+      ],
+      ctaText: "LMS Hakkında Bilgi Al",
+      ctaLink: "#iletisim",
+      benefits: [
+        {
+          icon: "🎯",
+          title: "Eşit Başlangıç",
+          description: "Tüm katılımcılar aynı seviyeden başlar",
+        },
+        {
+          icon: "⏱️",
+          title: "Kendi Hızında Öğrenme",
+          description: "Esnek zamanlı, bireysel ilerleme",
+        },
+        {
+          icon: "🚀",
+          title: "Verimli Uygulama",
+          description: "Etkinlik günü maksimum performans",
+        },
+      ],
+      visualIcon: "💻",
+      visualText: "Video Dersler • Quizler • Simülasyonlar",
     },
   ];
 
