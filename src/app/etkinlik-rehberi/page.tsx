@@ -210,7 +210,7 @@ export default function EtkinlikRehberi() {
                 saha desteğiyle sorunsuz bir deneyim sunuyoruz.
               </p>
               <p className="text-lg text-gray-600">
-                Aşağıdaki <strong className="text-gray-900">örnek senaryoları</strong> inceleyerek
+                Aşağıdaki <strong className="text-gray-900">örnek senaryoları ve içerikleri</strong> inceleyerek
                 etkinliğiniz için ilham alabilirsiniz.
               </p>
             </div>
