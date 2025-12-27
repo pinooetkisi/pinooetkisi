@@ -41,7 +41,7 @@ export default function StemThemes() {
       levelColor: "purple",
       theme: "Uzay Çağı",
       topic: "Uzay Gözlemevi: Yeni Dünyaların Keşfi",
-      image: "/images/themes/uzay-cagi.jpg",
+      image: "/images/themes/uzay-gozlemevi.jpg",
       pdfUrl: "/docs/uzay-gozlemevi.pdf",
     },
     {
