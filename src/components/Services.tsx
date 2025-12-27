@@ -99,7 +99,7 @@ export default function Services() {
         {/* CTA */}
         <div className="text-center">
           <a
-            href="/etkinlik-rehberi"
+            href="/etkinlik-planla"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:shadow-lg"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
