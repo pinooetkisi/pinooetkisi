@@ -255,14 +255,14 @@ export default function StemFirsatlari() {
                     id={program.id}
                     className={`bg-white rounded-3xl overflow-hidden shadow-sm border ${colors.border}`}
                   >
-                    <div className={`bg-gradient-to-r ${colors.gradient} px-6 sm:px-8 py-4`}>
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl flex items-center justify-center p-2 flex-shrink-0">
+                    <div className={`bg-gradient-to-r ${colors.gradient} px-6 sm:px-8 py-5`}>
+                      <div className="flex items-center gap-5">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl flex items-center justify-center p-2.5 flex-shrink-0 shadow-lg">
                           <Image
                             src={program.logo}
                             alt={`${program.name} logo`}
-                            width={48}
-                            height={48}
+                            width={72}
+                            height={72}
                             className="w-full h-full object-contain"
                           />
                         </div>
