@@ -18,15 +18,6 @@ export default function StemThemes() {
 
   const themes: Theme[] = [
     {
-      id: "akilli-tarim",
-      level: "Ortaokul",
-      levelColor: "blue",
-      theme: "Akıllı Tarım",
-      topic: "Geleceğin Tarım Mühendisleri",
-      image: "/images/themes/akilli-tarim.jpg",
-      pdfUrl: "/docs/gelecegin-tarim-muhendisleri.pdf",
-    },
-    {
       id: "saglik-kaliteli-yasam",
       level: "İlkokul",
       levelColor: "orange",
@@ -34,6 +25,15 @@ export default function StemThemes() {
       topic: "Evde Yaşam Destekçim",
       image: "/images/themes/saglik-kaliteli-yasam.jpg",
       pdfUrl: "/docs/evde-yasam-destekcim.pdf",
+    },
+    {
+      id: "akilli-tarim",
+      level: "Ortaokul",
+      levelColor: "blue",
+      theme: "Akıllı Tarım",
+      topic: "Geleceğin Tarım Mühendisleri",
+      image: "/images/themes/akilli-tarim.jpg",
+      pdfUrl: "/docs/gelecegin-tarim-muhendisleri.pdf",
     },
     {
       id: "mekanik-sistemler",
