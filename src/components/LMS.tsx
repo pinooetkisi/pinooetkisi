@@ -20,6 +20,7 @@ export default function LMS() {
         "Yarışma veya festival öncesi hazırlık yapanlar",
       ],
       ctaText: "LMS Hakkında Bilgi Al",
+      ctaLink: "#iletisim",
       benefits: [
         {
           icon: "🎯",
@@ -54,7 +55,8 @@ export default function LMS() {
         "Saha rehberi ve eğitmen desteği",
         "Malzeme ve ekipman koordinasyonu",
       ],
-      ctaText: "Rehberlik Hizmeti Al",
+      ctaText: "Senaryoları İncele",
+      ctaLink: "/etkinlik-rehberi",
       benefits: [
         {
           icon: "📋",
@@ -175,7 +177,7 @@ export default function LMS() {
             </div>
 
             <a
-              href="#iletisim"
+              href={currentSlide.ctaLink}
               className={`inline-flex items-center gap-2 ${colors.button} text-white px-6 py-3 rounded-xl font-semibold transition-all hover:shadow-lg`}
             >
               {currentSlide.ctaText}
