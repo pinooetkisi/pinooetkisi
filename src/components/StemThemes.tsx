@@ -45,13 +45,13 @@ export default function StemThemes() {
       pdfUrl: "/docs/uzay-gozlemevi.pdf",
     },
     {
-      id: "elektronik-devreler",
-      level: "Ortaokul",
-      levelColor: "purple",
-      theme: "Elektronik & Devreler",
-      topic: "LED Devre Tasarımı",
-      image: "/images/themes/elektronik-devreler.jpg",
-      pdfUrl: "/docs/elektronik-devreler.pdf",
+      id: "akilli-sera",
+      level: "Lise",
+      levelColor: "emerald",
+      theme: "Akıllı Tarım",
+      topic: "Akıllı Sera Ekosistemi",
+      image: "/images/themes/akilli-sera.jpg",
+      pdfUrl: "/docs/akilli-sera-ekosistemi.pdf",
     },
   ];
 
