@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Ulusal & Uluslararası STEM Fırsatları | Pinoo Etkisi",
@@ -13,7 +14,7 @@ export default function StemFirsatlari() {
   const programs = [
     {
       id: "scientix",
-      icon: "🔬",
+      logo: "/images/scientix-logo.png",
       name: "Scientix",
       color: "blue",
       description:
@@ -27,7 +28,7 @@ export default function StemFirsatlari() {
     },
     {
       id: "erasmus",
-      icon: "🇪🇺",
+      logo: "/images/erasmus-logo.png",
       name: "Erasmus+",
       subtitle: "Okul Eğitimi – KA1 / KA2",
       color: "indigo",
@@ -42,7 +43,7 @@ export default function StemFirsatlari() {
     },
     {
       id: "etwinning",
-      icon: "🌐",
+      logo: "/images/etwinning-logo.png",
       name: "eTwinning",
       color: "purple",
       description:
@@ -56,7 +57,7 @@ export default function StemFirsatlari() {
     },
     {
       id: "tubitak",
-      icon: "🔬",
+      logo: "/images/tübitak-logo.png",
       name: "TÜBİTAK",
       subtitle: "4006 – 2204 – 2202 vb.",
       color: "emerald",
@@ -71,7 +72,7 @@ export default function StemFirsatlari() {
     },
     {
       id: "teknofest",
-      icon: "🚀",
+      logo: "/images/teknofest-logo.png",
       name: "TEKNOFEST",
       color: "orange",
       description:
@@ -255,8 +256,16 @@ export default function StemFirsatlari() {
                     className={`bg-white rounded-3xl overflow-hidden shadow-sm border ${colors.border}`}
                   >
                     <div className={`bg-gradient-to-r ${colors.gradient} px-6 sm:px-8 py-4`}>
-                      <div className="flex items-center gap-3">
-                        <span className="text-3xl">{program.icon}</span>
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl flex items-center justify-center p-2 flex-shrink-0">
+                          <Image
+                            src={program.logo}
+                            alt={`${program.name} logo`}
+                            width={48}
+                            height={48}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
                         <div>
                           <h3 className="text-xl sm:text-2xl font-bold text-white">{program.name}</h3>
                           {program.subtitle && (
