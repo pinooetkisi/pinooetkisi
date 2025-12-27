@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import StemThemes from "@/components/StemThemes";
 
 export const metadata: Metadata = {
   title: "Etkinlik Kurgusu & Rehberlik | Pinoo Etkisi",
@@ -368,6 +369,9 @@ export default function EtkinlikRehberi() {
             </div>
           </div>
         </section>
+
+        {/* STEM Themes Section */}
+        <StemThemes />
 
         {/* CTA Section */}
         <section className="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white">
