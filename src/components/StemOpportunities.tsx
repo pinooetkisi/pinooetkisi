@@ -44,9 +44,9 @@ export default function StemOpportunities() {
     <section className="py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Row - Text Left, Image Right */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-5 gap-12 items-center mb-16">
           {/* Left Content */}
-          <div>
+          <div className="lg:col-span-2">
             <span className="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">
               STEM Ekosistemi
             </span>
@@ -77,7 +77,7 @@ export default function StemOpportunities() {
           </div>
 
           {/* Right Image */}
-          <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-xl">
+          <div className="lg:col-span-3 relative h-72 lg:h-80 rounded-3xl overflow-hidden shadow-xl">
             <Image
               src="/images/stem-ekosistemi-bg.jpg"
               alt="STEM Ekosistemi"
