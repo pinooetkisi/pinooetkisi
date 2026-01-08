@@ -70,10 +70,6 @@ export default function StemOpportunities() {
               ))}
             </div>
 
-            <p className="text-gray-600">
-              <strong className="text-gray-900">Pinoo Etkisi;</strong> bu fırsatlara katılmak isteyen kurumlar için
-              hazırlık, uygulama ve destek süreçlerini kolaylaştıran bir <strong className="text-blue-600">köprü</strong> görevi görür.
-            </p>
           </div>
 
           {/* Right Image */}
@@ -86,6 +82,12 @@ export default function StemOpportunities() {
             />
           </div>
         </div>
+
+        {/* Bridge Message - Full Width */}
+        <p className="text-lg text-gray-600 text-center mb-16">
+          <strong className="text-gray-900">Pinoo Etkisi;</strong> bu fırsatlara katılmak isteyen kurumlar için
+          hazırlık, uygulama ve destek süreçlerini kolaylaştıran bir <strong className="text-blue-600">köprü</strong> görevi görür.
+        </p>
 
         {/* Highlight Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
