@@ -85,12 +85,12 @@ export default function StemOpportunities() {
           </div>
 
           {/* Right Image */}
-          <div className="lg:col-span-3 relative h-72 lg:h-80 rounded-3xl overflow-hidden shadow-xl">
+          <div className="lg:col-span-3 relative h-56 sm:h-64 lg:h-80 rounded-3xl overflow-hidden shadow-xl">
             <Image
               src="/images/stem-ekosistemi-bg.jpg"
               alt="STEM Ekosistemi"
               fill
-              className="object-cover"
+              className="object-contain sm:object-cover object-center bg-blue-50"
             />
           </div>
         </div>
