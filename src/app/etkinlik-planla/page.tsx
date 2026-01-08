@@ -105,10 +105,29 @@ export default function EtkinlikPlanla() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    try {
+      const response = await fetch("/api/event-plan", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Bir hata oluştu");
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Form gönderme hatası:", error);
+      alert("Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const canProceed = () => {
