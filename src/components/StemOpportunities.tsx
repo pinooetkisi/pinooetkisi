@@ -59,15 +59,27 @@ export default function StemOpportunities() {
             </p>
 
             {/* Program Badges */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {programs.map((program) => (
-                <span
-                  key={program.name}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium ${program.color}`}
-                >
-                  {program.name}
-                </span>
-              ))}
+            <div className="mb-6">
+              <div className="flex flex-wrap gap-2 mb-2">
+                {programs.slice(0, 3).map((program) => (
+                  <span
+                    key={program.name}
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium ${program.color}`}
+                  >
+                    {program.name}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {programs.slice(3).map((program) => (
+                  <span
+                    key={program.name}
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium ${program.color}`}
+                  >
+                    {program.name}
+                  </span>
+                ))}
+              </div>
             </div>
 
           </div>
