@@ -41,50 +41,50 @@ export default function StemOpportunities() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/stem-ekosistemi-bg.jpg"
-          alt="STEM Ekosistemi"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/85 to-blue-50/90" />
-      </div>
+    <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Row - Text Left, Image Right */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left Content */}
+          <div>
+            <span className="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">
+              STEM Ekosistemi
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Ulusal ve Uluslararası STEM Fırsatlarına Hazırlanın
+            </h2>
+            <p className="text-lg text-gray-600 mb-6">
+              Türkiye'de ve Avrupa'da öğrenci ve öğretmenlere yönelik birçok resmî STEM programı,
+              proje ve yarışma bulunmaktadır.
+            </p>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">
-            STEM Ekosistemi
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Ulusal ve Uluslararası STEM Fırsatlarına Hazırlanın
-          </h2>
-          <p className="text-lg text-gray-700 mb-6">
-            Türkiye'de ve Avrupa'da öğrenci ve öğretmenlere yönelik birçok resmî STEM programı,
-            proje ve yarışma bulunmaktadır.
-          </p>
+            {/* Program Badges */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {programs.map((program) => (
+                <span
+                  key={program.name}
+                  className={`px-3 py-1.5 rounded-full text-sm font-medium ${program.color}`}
+                >
+                  {program.name}
+                </span>
+              ))}
+            </div>
 
-          {/* Program Badges */}
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {programs.map((program) => (
-              <span
-                key={program.name}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium ${program.color} backdrop-blur-sm`}
-              >
-                {program.name}
-              </span>
-            ))}
+            <p className="text-gray-600">
+              <strong className="text-gray-900">Pinoo Etkisi;</strong> bu fırsatlara katılmak isteyen kurumlar için
+              hazırlık, uygulama ve destek süreçlerini kolaylaştıran bir <strong className="text-blue-600">köprü</strong> görevi görür.
+            </p>
           </div>
 
-          <p className="text-gray-700">
-            <strong className="text-gray-900">Pinoo Etkisi;</strong> bu fırsatlara katılmak isteyen kurumlar için
-            hazırlık, uygulama ve destek süreçlerini kolaylaştıran bir <strong className="text-blue-600">köprü</strong> görevi görür.
-          </p>
+          {/* Right Image */}
+          <div className="relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/stem-ekosistemi-bg.jpg"
+              alt="STEM Ekosistemi"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
         {/* Highlight Cards */}
@@ -92,7 +92,7 @@ export default function StemOpportunities() {
           {highlights.map((item, index) => (
             <div
               key={index}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
             >
               <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
                 {item.icon}
@@ -104,7 +104,7 @@ export default function StemOpportunities() {
         </div>
 
         {/* Message Box */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-blue-100 shadow-sm max-w-2xl mx-auto mb-10">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-blue-100 shadow-sm max-w-2xl mx-auto mb-10">
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ export default function StemOpportunities() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-          <p className="text-sm text-gray-600 mt-3">
+          <p className="text-sm text-gray-500 mt-3">
             Hangi program size uygun, Pinoo Etkisi nasıl destekler?
           </p>
         </div>
