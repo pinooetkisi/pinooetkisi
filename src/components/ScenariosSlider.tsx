@@ -165,14 +165,14 @@ export default function ScenariosSlider() {
         </div>
 
         {/* Scenario Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex overflow-x-auto pb-2 mb-8 gap-2 justify-start sm:justify-center scrollbar-hide">
           {scenarios.map((scenario, index) => {
             const tabColors = getColorClasses(scenario.color);
             return (
               <button
                 key={scenario.id}
                 onClick={() => setActiveScenario(index)}
-                className={`px-4 py-2.5 rounded-xl font-medium text-sm transition-all ${
+                className={`px-4 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap flex-shrink-0 ${
                   activeScenario === index
                     ? `${tabColors.button} text-white shadow-lg`
                     : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"

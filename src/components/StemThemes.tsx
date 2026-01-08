@@ -132,17 +132,19 @@ export default function StemThemes() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              <div>
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(selectedTheme.levelColor)} mr-2`}>
-                  {selectedTheme.level}
-                </span>
-                <span className="text-sm text-gray-500">{selectedTheme.theme}</span>
-                <h3 className="font-bold text-gray-900 text-lg">{selectedTheme.topic}</h3>
+            <div className="flex items-start justify-between p-4 border-b border-gray-200 gap-4">
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${getLevelColor(selectedTheme.levelColor)}`}>
+                    {selectedTheme.level}
+                  </span>
+                  <span className="text-sm text-gray-500">{selectedTheme.theme}</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-base sm:text-lg truncate">{selectedTheme.topic}</h3>
               </div>
               <button
                 onClick={() => setSelectedTheme(null)}
-                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors flex-shrink-0"
               >
                 <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -160,14 +162,14 @@ export default function StemThemes() {
             </div>
 
             {/* Modal Footer */}
-            <div className="flex items-center justify-between p-4 border-t border-gray-200 bg-gray-50">
-              <p className="text-sm text-gray-500">
+            <div className="flex flex-col sm:flex-row items-center justify-between p-4 border-t border-gray-200 bg-gray-50 gap-3">
+              <p className="text-sm text-gray-500 text-center sm:text-left">
                 Bu içerik örnek amaçlıdır. Etkinlikleriniz için özelleştirilebilir.
               </p>
               <a
                 href={selectedTheme.pdfUrl}
                 download
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex-shrink-0"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

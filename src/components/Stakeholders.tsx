@@ -210,12 +210,12 @@ export default function Stakeholders() {
                   </div>
                 </div>
                 {/* Image */}
-                <div className="sm:w-1/2 h-48 sm:h-52 relative min-h-[200px]">
+                <div className="w-full sm:w-1/2 h-40 sm:h-48 relative">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-contain object-center"
+                    className="object-contain object-center p-2"
                   />
                 </div>
               </div>
