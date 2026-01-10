@@ -47,7 +47,7 @@ export default function Hero() {
           {/* 3 Main CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="#iletisim"
+              href="#hizmetler"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:shadow-lg hover:shadow-blue-600/25"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
