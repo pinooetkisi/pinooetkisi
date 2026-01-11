@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 export default function WhatIs() {
+  const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
+
   const features = [
     {
       icon: (
@@ -82,45 +88,99 @@ export default function WhatIs() {
           ))}
         </div>
 
-        {/* Platform Identity */}
+        {/* Platform Identity with Video */}
         <div className="mt-16 bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 sm:p-12 text-white">
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-6">
-              Platform Kimliği
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-6 text-left">
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-red-400">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Video Section */}
+            <div className="order-2 lg:order-1">
+              <div className="relative rounded-2xl overflow-hidden bg-black/50 aspect-video group">
+                <video
+                  className="w-full h-full object-cover"
+                  poster="/images/video-poster.jpg"
+                  controls
+                  playsInline
+                >
+                  <source src="/videos/pinoo-etkisi-tanitim.mp4" type="video/mp4" />
+                  Tarayıcınız video etiketini desteklemiyor.
+                </video>
+
+                {/* Fullscreen Button */}
+                <button
+                  onClick={() => setIsVideoFullscreen(true)}
+                  className="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                  title="Tam ekran"
+                >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                   </svg>
-                  <span>Sadece &quot;okul hizmeti&quot; değil</span>
-                </div>
-                <div className="flex items-center gap-3 text-red-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                  <span>Sadece &quot;robotik kiralama&quot; değil</span>
-                </div>
+                </button>
               </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-emerald-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>STEM için kaynak + uygulama</span>
+              <p className="text-gray-400 text-sm text-center mt-3">
+                Pinoo Etkisi&apos;ni tanıyın
+              </p>
+            </div>
+
+            {/* Platform Identity Content */}
+            <div className="order-1 lg:order-2">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-center lg:text-left">
+                Platform Kimliği
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-6 text-left">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 text-red-400">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span>Sadece &quot;okul hizmeti&quot; değil</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-red-400">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span>Sadece &quot;robotik kiralama&quot; değil</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 text-emerald-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Destek + sosyal etki platformu</span>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 text-emerald-400">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>STEM için kaynak + uygulama</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-emerald-400">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Destek + sosyal etki platformu</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Fullscreen Video Modal */}
+      {isVideoFullscreen && (
+        <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+          <button
+            onClick={() => setIsVideoFullscreen(false)}
+            className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full z-10"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <video
+            className="w-full h-full max-w-6xl max-h-[90vh] object-contain"
+            controls
+            autoPlay
+            playsInline
+          >
+            <source src="/videos/pinoo-etkisi-tanitim.mp4" type="video/mp4" />
+          </video>
+        </div>
+      )}
     </section>
   );
 }
