@@ -1,101 +1,147 @@
+"use client";
+
+import { useState, useRef } from "react";
+import Image from "next/image";
+
 export default function Impact() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
   const stats = [
     { value: "50+", label: "Etkinlik", icon: "🎪" },
     { value: "5000+", label: "Öğrenci", icon: "👨‍🎓" },
-    { value: "30+", label: "Desteklenen Kurum", icon: "🏫" },
-    { value: "15+", label: "Sponsor Katkısı", icon: "💝" },
+    { value: "30+", label: "Kurum", icon: "🏫" },
+    { value: "15+", label: "Sponsor", icon: "💝" },
   ];
 
-  const testimonials = [
-    {
-      quote: "Pinoo Etkisi ile ilk STEM festivalimizi düzenledik. Sponsor eşleştirme sayesinde tüm maliyetler karşılandı!",
-      author: "Ayşe Yılmaz",
-      role: "Okul Müdürü",
-      org: "Atatürk Ortaokulu, Ankara",
-    },
-    {
-      quote: "Sosyal sorumluluk projelerimizde Pinoo Etkisi'ni tercih ediyoruz. Etki raporları çok değerli.",
-      author: "Mehmet Kaya",
-      role: "Kurumsal İletişim Müdürü",
-      org: "Teknoloji A.Ş.",
-    },
+  const galleryImages = [
+    { src: "/images/gallery/etkinlik-1.jpg", alt: "STEM Etkinliği 1" },
+    { src: "/images/gallery/etkinlik-2.jpg", alt: "STEM Etkinliği 2" },
+    { src: "/images/gallery/etkinlik-3.jpg", alt: "STEM Etkinliği 3" },
+    { src: "/images/gallery/etkinlik-4.jpg", alt: "STEM Etkinliği 4" },
+    { src: "/images/gallery/etkinlik-5.jpg", alt: "STEM Etkinliği 5" },
+    { src: "/images/gallery/etkinlik-6.jpg", alt: "STEM Etkinliği 6" },
   ];
+
+  const scrollToSlide = (index: number) => {
+    if (sliderRef.current) {
+      const slideWidth = sliderRef.current.offsetWidth;
+      sliderRef.current.scrollTo({
+        left: index * slideWidth * 0.85,
+        behavior: "smooth",
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (sliderRef.current) {
+      const slideWidth = sliderRef.current.offsetWidth * 0.85;
+      const newIndex = Math.round(sliderRef.current.scrollLeft / slideWidth);
+      setCurrentSlide(newIndex);
+    }
+  };
 
   return (
-    <section id="etki" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <section id="etki" className="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-emerald-400 font-semibold text-sm uppercase tracking-wider mb-4">
-            Sosyal Etki
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Birlikte Yarattığımız Etki
-          </h2>
-          <p className="text-xl text-gray-300">
-            Her etkinlik, geleceğin bilim insanları ve mühendislerine ilham veriyor
-          </p>
-        </div>
+        {/* Header + Stats Row */}
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-12">
+          {/* Section Header */}
+          <div className="lg:max-w-md">
+            <span className="inline-block text-emerald-400 font-semibold text-sm uppercase tracking-wider mb-2">
+              Sosyal Etki
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+              Birlikte Yarattığımız Etki
+            </h2>
+            <p className="text-gray-300">
+              Her etkinlik, geleceğin bilim insanlarına ilham veriyor
+            </p>
+          </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-colors"
-            >
-              <div className="text-4xl mb-3">{stat.icon}</div>
-              <div className="text-4xl sm:text-5xl font-bold mb-2">{stat.value}</div>
-              <div className="text-gray-300">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
-            >
-              <div className="flex gap-1 mb-4">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <svg
-                    key={star}
-                    className="w-5 h-5 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-lg text-gray-200 mb-6 italic">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <div>
-                <div className="font-semibold">{testimonial.author}</div>
-                <div className="text-sm text-gray-400">{testimonial.role}</div>
-                <div className="text-sm text-emerald-400">{testimonial.org}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Trust Badges */}
-        <div className="text-center">
-          <p className="text-gray-400 mb-6">Türkiye genelinde güvenilir iş birlikleri</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {["Okullar", "BİLSEM", "Belediyeler", "STK'lar", "Firmalar"].map((org, i) => (
+          {/* Stats - Compact */}
+          <div className="flex flex-wrap gap-4 lg:gap-6">
+            {stats.map((stat, index) => (
               <div
-                key={i}
-                className="px-6 py-3 bg-white/10 rounded-lg text-gray-300 text-sm font-medium"
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 text-center hover:bg-white/20 transition-colors"
               >
-                {org}
+                <div className="text-xl mb-1">{stat.icon}</div>
+                <div className="text-2xl font-bold">{stat.value}</div>
+                <div className="text-gray-400 text-xs">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Gallery Slider */}
+        <div className="relative">
+          <div
+            ref={sliderRef}
+            onScroll={handleScroll}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {galleryImages.map((image, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[85%] sm:w-[45%] lg:w-[30%] snap-start"
+              >
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={() => scrollToSlide(Math.max(0, currentSlide - 1))}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 rounded-full transition-colors hidden sm:block"
+            aria-label="Önceki"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => scrollToSlide(Math.min(galleryImages.length - 1, currentSlide + 1))}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 rounded-full transition-colors hidden sm:block"
+            aria-label="Sonraki"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-4">
+            {galleryImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  currentSlide === index
+                    ? "bg-emerald-400 w-6"
+                    : "bg-white/30 hover:bg-white/50"
+                }`}
+                aria-label={`Slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Caption */}
+        <p className="text-center text-gray-400 text-sm mt-6">
+          Etkinliklerimizden kareler
+        </p>
       </div>
     </section>
   );
