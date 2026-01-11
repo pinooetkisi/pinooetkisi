@@ -15,12 +15,40 @@ export default function Impact() {
   ];
 
   const galleryImages = [
-    { src: "/images/gallery/etkinlik-1.jpg", alt: "STEM Etkinliği 1" },
-    { src: "/images/gallery/etkinlik-2.jpg", alt: "STEM Etkinliği 2" },
-    { src: "/images/gallery/etkinlik-3.jpg", alt: "STEM Etkinliği 3" },
-    { src: "/images/gallery/etkinlik-4.jpg", alt: "STEM Etkinliği 4" },
-    { src: "/images/gallery/etkinlik-5.jpg", alt: "STEM Etkinliği 5" },
-    { src: "/images/gallery/etkinlik-6.jpg", alt: "STEM Etkinliği 6" },
+    // Etkinlik 1
+    { src: "/images/gallery/etkinlik-1.1.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.2.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.3.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.4.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.5.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.6.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.7.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.8.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.9.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.10.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.11.JPG", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-1.12.JPG", alt: "STEM Etkinliği" },
+    // Etkinlik 2
+    { src: "/images/gallery/etkinlik-2.1.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.2.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.3.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.4.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.5.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.6.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.7.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.8.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.9.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.10.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.11.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-2.12.jpeg", alt: "STEM Etkinliği" },
+    // Etkinlik 3
+    { src: "/images/gallery/etkinlik-3.1.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-3.2.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-3.3.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-3.4.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-3.5.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-3.6.jpeg", alt: "STEM Etkinliği" },
+    { src: "/images/gallery/etkinlik-3.7.jpeg", alt: "STEM Etkinliği" },
   ];
 
   const scrollToSlide = (index: number) => {
@@ -121,25 +149,20 @@ export default function Impact() {
             </svg>
           </button>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-4">
-            {galleryImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => scrollToSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentSlide === index
-                    ? "bg-emerald-400 w-6"
-                    : "bg-white/30 hover:bg-white/50"
-                }`}
-                aria-label={`Slide ${index + 1}`}
+          {/* Progress Bar */}
+          <div className="flex justify-center items-center gap-4 mt-4">
+            <span className="text-gray-400 text-sm">{currentSlide + 1} / {galleryImages.length}</span>
+            <div className="w-32 h-1 bg-white/20 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-emerald-400 transition-all duration-300"
+                style={{ width: `${((currentSlide + 1) / galleryImages.length) * 100}%` }}
               />
-            ))}
+            </div>
           </div>
         </div>
 
         {/* Caption */}
-        <p className="text-center text-gray-400 text-sm mt-6">
+        <p className="text-center text-gray-400 text-sm mt-4">
           Etkinliklerimizden kareler
         </p>
       </div>
