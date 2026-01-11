@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
 import SponsorForm from "@/components/SponsorForm";
 
 export const metadata: Metadata = {
@@ -87,15 +86,6 @@ export default function SponsorOl() {
         <section className="bg-gradient-to-b from-emerald-50 via-white to-white py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium mb-8"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                Ana Sayfaya Dön
-              </Link>
               <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />

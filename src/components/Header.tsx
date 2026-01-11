@@ -3,9 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const navLinks = [
     { href: "#nedir", label: "Nedir?" },
@@ -30,58 +33,73 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="#iletisim"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors"
-            >
-              Teklif Al
-            </a>
-          </nav>
+          {isHomePage ? (
+            <>
+              {/* Desktop Navigation - Only on Home Page */}
+              <nav className="hidden md:flex items-center gap-8">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <a
+                  href="#iletisim"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors"
+                >
+                  Teklif Al
+                </a>
+              </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2"
-            aria-label="Menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              {/* Mobile Menu Button - Only on Home Page */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden p-2"
+                aria-label="Menu"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {isMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
+              </button>
+            </>
+          ) : (
+            /* Back to Home Button - On Other Pages */
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
             >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Ana Sayfaya Dön
+            </Link>
+          )}
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
+        {/* Mobile Navigation - Only on Home Page */}
+        {isHomePage && isMenuOpen && (
           <nav className="md:hidden py-4 border-t border-gray-100">
             {navLinks.map((link) => (
               <a
