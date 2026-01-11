@@ -107,7 +107,7 @@ export default function WhatIs() {
                 {/* Fullscreen Button */}
                 <button
                   onClick={() => setIsVideoFullscreen(true)}
-                  className="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute top-3 right-3 bg-black/60 hover:bg-black/80 text-white p-2 rounded-lg opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity"
                   title="Tam ekran"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
