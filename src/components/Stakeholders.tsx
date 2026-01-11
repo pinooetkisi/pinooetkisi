@@ -10,7 +10,7 @@ export default function Stakeholders() {
     {
       title: "Okullar",
       description: "Festivaller & Yarışmalar Düzenleyin",
-      image: "/images/stakeholders/okullar.jpg",
+      image: "/images/stakeholders/okullar.png",
       bgColor: "bg-blue-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,7 +23,7 @@ export default function Stakeholders() {
     {
       title: "BİLSEM'ler",
       description: "Üstün Yetenekliler İçin Özel Etkinlikler",
-      image: "/images/stakeholders/bilsemler.jpg",
+      image: "/images/stakeholders/bilsemler.png",
       bgColor: "bg-indigo-50",
       icon: (
         <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -38,7 +38,7 @@ export default function Stakeholders() {
     {
       title: "Belediyeler",
       description: "İlçe ve Mahalle Genelinde STEM Şenlikleri",
-      image: "/images/stakeholders/belediyeler.jpg",
+      image: "/images/stakeholders/belediyeler.png",
       bgColor: "bg-emerald-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ export default function Stakeholders() {
     {
       title: "STK'lar",
       description: "Sosyal Sorumluluk Projeleri ve Eğitim Programları",
-      image: "/images/stakeholders/stklar.jpg",
+      image: "/images/stakeholders/stklar.png",
       bgColor: "bg-rose-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@ export default function Stakeholders() {
     {
       title: "Bilim Atölyeleri",
       description: "Kendi Müşterileri İçin Etkinlik ve Kurslar",
-      image: "/images/stakeholders/bilim-atolyeleri.jpg",
+      image: "/images/stakeholders/bilim-atolyeleri.png",
       bgColor: "bg-amber-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +75,7 @@ export default function Stakeholders() {
     {
       title: "Gençlik Merkezleri",
       description: "Gençlere Yönelik Teknoloji Atölyeleri",
-      image: "/images/stakeholders/genclik-merkezleri.jpg",
+      image: "/images/stakeholders/genclik-merkezleri.png",
       bgColor: "bg-purple-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@ export default function Stakeholders() {
     {
       title: "Kurumsal Firmalar",
       description: "Ulusal Görünürlük ve Marka Değeri",
-      image: "/images/stakeholders/kurumsal-firmalar.jpg",
+      image: "/images/stakeholders/kurumsal-firmalar.png",
       bgColor: "bg-emerald-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@ export default function Stakeholders() {
     {
       title: "Yerel İşletmeler",
       description: "Topluluk Bağı ve Yerel Tanınırlık",
-      image: "/images/stakeholders/yerel-isletmeler.jpg",
+      image: "/images/stakeholders/yerel-isletmeler.png",
       bgColor: "bg-amber-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ export default function Stakeholders() {
     {
       title: "Eğitim Vakıfları",
       description: "Sosyal Etki ve Sürdürülebilir Katkı",
-      image: "/images/stakeholders/egitim-vakiflari.jpg",
+      image: "/images/stakeholders/egitim-vakiflari.png",
       bgColor: "bg-rose-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,7 +126,7 @@ export default function Stakeholders() {
     {
       title: "Teknoloji Şirketleri",
       description: "Gelecek Nesil Yeteneklere Erişim",
-      image: "/images/stakeholders/teknoloji-sirketleri.jpg",
+      image: "/images/stakeholders/teknoloji-sirketleri.png",
       bgColor: "bg-cyan-50",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
