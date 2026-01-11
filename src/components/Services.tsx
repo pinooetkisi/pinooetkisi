@@ -4,7 +4,7 @@ export default function Services() {
     { name: "Bilim/STEM Yarışma Etkinlikleri", icon: "🏆" },
     { name: "Bilim/STEM Şenlikleri", icon: "🎪" },
     { name: "STEM Eğitim/Atölye Programları", icon: "📚" },
-    { name: "TÜBİTAK 2204-4004-4005-4006-4007 / TEKNOFEST Etkinlik Programları", icon: "🚀" },
+    { name: "TÜBİTAK/TEKNOFEST Etkinlik Programları", icon: "🚀" },
   ];
 
   const supports = [
