@@ -98,7 +98,7 @@ export default function Sponsorship() {
             </div>
 
             <a
-              href="#iletisim"
+              href="/etkinlik-planla"
               className="inline-flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-xl font-semibold transition-all hover:shadow-lg"
             >
               Hizmet Talebi Oluştur
