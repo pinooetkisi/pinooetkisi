@@ -1,10 +1,10 @@
 export default function Services() {
   const eventTypes = [
-    { name: "STEM Eğitimleri", icon: "📚" },
-    { name: "Robotik Kodlama Yarışmaları", icon: "🤖" },
-    { name: "STEM Festivalleri", icon: "🎪" },
-    { name: "Bilim Şenlikleri", icon: "🔬" },
-    { name: "Tematik Hackathon'lar", icon: "💻" },
+    { name: "Robot Yarışmaları", icon: "🤖" },
+    { name: "Bilim/STEM Yarışma Etkinlikleri", icon: "🏆" },
+    { name: "Bilim/STEM Şenlikleri", icon: "🎪" },
+    { name: "STEM Eğitim/Atölye Programları", icon: "📚" },
+    { name: "TÜBİTAK 2204-4004-4005-4006-4007 / TEKNOFEST Etkinlik Programları", icon: "🚀" },
   ];
 
   const supports = [
