@@ -37,6 +37,7 @@ export default function SponsorForm() {
     "Vakıf / fon sağlayıcı kuruluş",
     "Yerel işletme",
     "STK / dernek",
+    "Bireysel gönüllü / Aile",
     "Diğer",
   ];
 
@@ -142,38 +143,38 @@ export default function SponsorForm() {
           STEM Etkinlikleri İçin Sponsor Başvurusu
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Bu form, STEM eğitimleri, yarışmaları ve festivallerine destek olmak isteyen kurum ve kuruluşların başvurularını almak amacıyla hazırlanmıştır.
+          Bu form, STEM eğitimleri, yarışmaları ve festivallerine destek olmak isteyen kurum, kuruluş ve bireysel gönüllülerin başvurularını almak amacıyla hazırlanmıştır.
           Paylaştığınız bilgiler, yalnızca uygun etkinliklerle eşleştirme yapılması ve sponsorluk sürecinin sağlıklı şekilde yürütülmesi için kullanılacaktır.
         </p>
       </div>
 
-      {/* 1. Kurum Bilgileri */}
+      {/* 1. Kurum / Sponsor Bilgileri */}
       <div className={sectionClass}>
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
             <span className="text-xl">🏢</span>
           </div>
-          <h3 className="text-xl font-bold text-gray-900">1. Kurum Bilgileri</h3>
+          <h3 className="text-xl font-bold text-gray-900">1. Sponsor Bilgileri</h3>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
           <div className="sm:col-span-2">
             <label className={labelClass}>
-              Kurum / Kuruluş Adı <span className="text-red-500">*</span>
+              Kurum Adı / Ad Soyad <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
               value={formData.orgName}
               onChange={(e) => setFormData({ ...formData, orgName: e.target.value })}
               className={inputClass}
-              placeholder="Kurumunuzun resmî adını giriniz"
+              placeholder="Kurum adınızı veya bireysel iseniz adınızı soyadınızı giriniz"
               required
             />
           </div>
 
           <div>
             <label className={labelClass}>
-              Kurum Türü <span className="text-red-500">*</span>
+              Sponsor Türü <span className="text-red-500">*</span>
             </label>
             <select
               value={formData.orgType}
@@ -190,14 +191,14 @@ export default function SponsorForm() {
 
           <div>
             <label className={labelClass}>
-              Faaliyet Alanı <span className="text-red-500">*</span>
+              Faaliyet / İlgi Alanı <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
               value={formData.activityArea}
               onChange={(e) => setFormData({ ...formData, activityArea: e.target.value })}
               className={inputClass}
-              placeholder="Örnek: teknoloji, enerji, üretim, eğitim"
+              placeholder="Örnek: teknoloji, eğitim, mühendislik, sanat"
               required
             />
           </div>
@@ -229,7 +230,7 @@ export default function SponsorForm() {
         <div className="grid sm:grid-cols-2 gap-6">
           <div>
             <label className={labelClass}>
-              Yetkili Kişi Adı Soyadı <span className="text-red-500">*</span>
+              İletişim Kişisi Adı Soyadı <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -243,15 +244,14 @@ export default function SponsorForm() {
 
           <div>
             <label className={labelClass}>
-              Görevi / Ünvanı <span className="text-red-500">*</span>
+              Görevi / Mesleği <span className="text-gray-400 font-normal">(Opsiyonel)</span>
             </label>
             <input
               type="text"
               value={formData.contactTitle}
               onChange={(e) => setFormData({ ...formData, contactTitle: e.target.value })}
               className={inputClass}
-              placeholder="Örnek: Pazarlama Müdürü"
-              required
+              placeholder="Örnek: Mühendis, Öğretmen, Pazarlama Müdürü"
             />
           </div>
 

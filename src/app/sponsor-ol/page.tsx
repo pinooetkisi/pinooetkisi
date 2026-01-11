@@ -17,6 +17,7 @@ export default function SponsorOl() {
     { icon: "💻", text: "Teknoloji, enerji ve üretim şirketleri" },
     { icon: "🏪", text: "Yerel işletmeler" },
     { icon: "🤝", text: "Sosyal sorumluluk projeleri yürüten kurumlar" },
+    { icon: "👤", text: "Bireysel gönüllüler ve aileler" },
   ];
 
   const sponsorBenefits = [
@@ -172,7 +173,7 @@ export default function SponsorOl() {
                   Kimler Sponsor Olabilir?
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Pinoo Etkisi; STEM alanında sosyal katkı sağlamak isteyen tüm kurum ve kuruluşlara açıktır.
+                  Pinoo Etkisi; STEM alanında sosyal katkı sağlamak isteyen tüm kurum, kuruluş ve bireylere açıktır.
                 </p>
               </div>
 
