@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import SponsorSearchForm from "@/components/SponsorSearchForm";
 
 export const metadata: Metadata = {
   title: "Sponsor Ara | Pinoo Etkisi",
@@ -260,53 +260,23 @@ export default function SponsorAra() {
         </section>
 
         {/* Form Section */}
-        <section className="py-16 sm:py-20 bg-white">
+        <section id="sponsor-form" className="py-16 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-8 sm:p-12 text-white">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                    Etkinliğiniz İçin Sponsor Talebi Oluşturun
-                  </h2>
-                  <p className="text-blue-100 text-lg">
-                    Aşağıdaki formu doldurarak STEM etkinliğiniz için sponsor talebinizi oluşturabilirsiniz.
-                    Paylaştığınız bilgiler, yalnızca uygun sponsorlarla eşleştirme yapılabilmesi amacıyla kullanılacaktır.
-                  </p>
-                </div>
-
-                <div className="bg-white/10 rounded-2xl p-6 mb-8">
-                  <h3 className="font-semibold text-white mb-4">Formda istenecek bilgiler:</h3>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {[
-                      "Kurum türü",
-                      "Etkinlik türü (STEM eğitimi, yarışma, festival vb.)",
-                      "Hedef yaş grubu",
-                      "Katılımcı sayısı",
-                      "İhtiyaç duyulan destek (tam / kısmi)",
-                      "Etkinliğin hedeflenen sosyal etkisi",
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center gap-2 text-blue-100">
-                        <svg className="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <Link
-                    href="/#iletisim"
-                    className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
-                  >
-                    Sponsor Talebi Oluştur
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
+              <div className="text-center mb-10">
+                <span className="inline-block text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                  Başvuru Formu
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                  Etkinliğiniz İçin Sponsor Talebi Oluşturun
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Aşağıdaki formu doldurarak STEM etkinliğiniz için sponsor talebinizi oluşturabilirsiniz.
+                  Paylaştığınız bilgiler, yalnızca uygun sponsorlarla eşleştirme yapılabilmesi amacıyla kullanılacaktır.
+                </p>
               </div>
+
+              <SponsorSearchForm />
             </div>
           </div>
         </section>
@@ -359,15 +329,15 @@ export default function SponsorAra() {
               <p className="text-lg sm:text-xl text-emerald-100 mb-8">
                 Etkinlik fikriniz hazırsa, sponsor arama sürecini birlikte başlatalım.
               </p>
-              <Link
-                href="/#iletisim"
+              <a
+                href="#sponsor-form"
                 className="inline-flex items-center justify-center gap-2 bg-white text-emerald-600 font-semibold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-colors shadow-lg"
               >
                 Sponsor Talebi Oluştur
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
