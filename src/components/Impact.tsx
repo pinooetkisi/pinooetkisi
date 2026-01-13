@@ -8,10 +8,10 @@ export default function Impact() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const stats = [
-    { value: "50+", label: "Etkinlik", icon: "🎪" },
-    { value: "5000+", label: "Öğrenci", icon: "👨‍🎓" },
-    { value: "30+", label: "Kurum", icon: "🏫" },
-    { value: "15+", label: "Sponsor", icon: "💝" },
+    { value: "10+", label: "Etkinlik", icon: "🎪" },
+    { value: "1000+", label: "Öğrenci", icon: "👨‍🎓" },
+    { value: "5+", label: "Kurum", icon: "🏫" },
+    { value: "3+", label: "Sponsor", icon: "💝" },
   ];
 
   const galleryImages = [
