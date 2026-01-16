@@ -24,9 +24,9 @@ export default function Testimonials() {
   ];
 
   const stats = [
-    { value: "50+", label: "Okul" },
-    { value: "5000+", label: "Öğrenci" },
-    { value: "200+", label: "Etkinlik" },
+    { value: "5+", label: "Kurum" },
+    { value: "1000+", label: "Öğrenci" },
+    { value: "10+", label: "Etkinlik" },
     { value: "%100", label: "Memnuniyet" },
   ];
 
