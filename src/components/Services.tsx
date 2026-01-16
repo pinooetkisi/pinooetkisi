@@ -77,8 +77,8 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Services with Images - 2x2 Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        {/* Services with Images - 4 columns */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {services.map((service, index) => {
             const colors = colorClasses[service.color];
             return (
@@ -86,23 +86,22 @@ export default function Services() {
                 key={index}
                 className={`group rounded-2xl overflow-hidden border ${colors.border} hover:shadow-xl transition-all duration-300`}
               >
-                {/* Image */}
-                <div className="relative h-48 sm:h-56 overflow-hidden">
+                {/* Image - Square aspect ratio */}
+                <div className="relative aspect-square overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
 
                 {/* Content */}
-                <div className={`p-6 ${colors.bg}`}>
-                  <h4 className={`text-xl font-bold mb-2 ${colors.text}`}>
+                <div className={`p-4 ${colors.bg}`}>
+                  <h4 className={`text-sm sm:text-base font-bold mb-1 ${colors.text}`}>
                     {service.title}
                   </h4>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-xs sm:text-sm">
                     {service.description}
                   </p>
                 </div>
