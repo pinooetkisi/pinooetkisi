@@ -1,15 +1,31 @@
-import { Metadata } from "next";
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SponsorSearchForm from "@/components/SponsorSearchForm";
-
-export const metadata: Metadata = {
-  title: "Sponsor Ara | Pinoo Etkisi",
-  description:
-    "STEM etkinliğiniz için sponsor bulun. Pinoo Etkisi, STEM eğitimi ve etkinlikleri için sponsor arayan kurumları, sosyal etki yaratmak isteyen destekçilerle buluşturur.",
-};
+import { useState } from "react";
 
 export default function SponsorAra() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      question: "Başvuru yapmak ücretli mi?",
+      answer: "Hayır, sponsor arama başvurusu tamamen ücretsizdir. Pinoo Etkisi olarak amacımız, STEM etkinliklerini destekçilerle buluşturmaktır. Başvuru sürecinde sizden herhangi bir ücret talep edilmez.",
+    },
+    {
+      question: "Sponsorluk garanti midir?",
+      answer: "Sponsorluk garantisi verilmemektedir. Ancak Pinoo Etkisi, etkinliğinizi en uygun sponsorlarla eşleştirmek için titizlikle çalışır. Etkinliğinizin niteliği, hedef kitlesi ve sosyal etkisi, sponsorluk olasılığını artıran önemli faktörlerdir.",
+    },
+    {
+      question: "Süreç ne kadar sürer?",
+      answer: "Başvurunuz alındıktan sonra 3-5 iş günü içinde sizinle iletişime geçilir. Sponsor eşleştirme süreci, etkinliğinizin kapsamına ve sponsor havuzumuzdaki uygun adaylara bağlı olarak 2-4 hafta arasında değişebilir.",
+    },
+    {
+      question: "Sadece nakdi destek mi alabilirim, ayni yardım (malzeme) mümkün mü?",
+      answer: "Her iki destek türü de mümkündür. Sponsorlar nakdi destek sağlayabileceği gibi, STEM kitleri, eğitim materyalleri, teknik ekipman veya mekan desteği gibi ayni yardımlarda da bulunabilir. Başvuru formunda ihtiyaç duyduğunuz destek türünü belirtebilirsiniz.",
+    },
+  ];
   const eligibleOrganizations = [
     { icon: "🏫", text: "Resmî ve özel okullar" },
     { icon: "💡", text: "BİLSEM'ler" },
@@ -319,8 +335,58 @@ export default function SponsorAra() {
           </div>
         </section>
 
-        {/* Closing CTA Section */}
+        {/* FAQ Section */}
         <section className="py-16 sm:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="inline-block text-orange-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                  SSS
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                  Sıkça Sorulan Sorular
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Sponsor arama süreci hakkında merak edilenler
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100"
+                  >
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-100 transition-colors"
+                    >
+                      <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
+                      <svg
+                        className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform ${
+                          openFaq === index ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {openFaq === index && (
+                      <div className="px-6 pb-6">
+                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA Section */}
+        <section className="py-16 sm:py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-8 sm:p-12 text-center text-white">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
