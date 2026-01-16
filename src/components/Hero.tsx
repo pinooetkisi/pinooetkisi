@@ -78,19 +78,19 @@ export default function Hero() {
           {/* Quick Stats */}
           <div className="flex flex-wrap justify-center gap-8 sm:gap-12 mt-16 pt-8 border-t border-gray-300/50">
             <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl px-6 py-3">
-              <div className="text-3xl sm:text-4xl font-bold text-gray-900">50+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900">10+</div>
               <div className="text-gray-600 text-sm">Etkinlik</div>
             </div>
             <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl px-6 py-3">
-              <div className="text-3xl sm:text-4xl font-bold text-gray-900">5000+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900">1000+</div>
               <div className="text-gray-600 text-sm">Öğrenci</div>
             </div>
             <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl px-6 py-3">
-              <div className="text-3xl sm:text-4xl font-bold text-gray-900">30+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900">5+</div>
               <div className="text-gray-600 text-sm">Kurum</div>
             </div>
             <div className="text-center bg-white/60 backdrop-blur-sm rounded-xl px-6 py-3">
-              <div className="text-3xl sm:text-4xl font-bold text-gray-900">15+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900">3+</div>
               <div className="text-gray-600 text-sm">Sponsor</div>
             </div>
           </div>
