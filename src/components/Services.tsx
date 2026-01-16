@@ -1,14 +1,6 @@
 import Image from "next/image";
 
 export default function Services() {
-  const eventTypes = [
-    { name: "Robot Yarışmaları", icon: "🤖" },
-    { name: "Bilim/STEM Yarışma Etkinlikleri", icon: "🏆" },
-    { name: "Bilim/STEM Şenlikleri", icon: "🎪" },
-    { name: "STEM Eğitim/Atölye Programları", icon: "📚" },
-    { name: "TÜBİTAK/TEKNOFEST Etkinlik Programları", icon: "🚀" },
-  ];
-
   const services = [
     {
       title: "Güvenli Set Kiralama",
@@ -59,21 +51,20 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Event Types */}
+        {/* Event Types - Single Image */}
         <div className="mb-16">
           <h3 className="text-xl font-bold text-gray-900 text-center mb-8">
             Düzenleyebileceğiniz Etkinlik Türleri
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {eventTypes.map((event, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full px-6 py-3 hover:shadow-md transition-all"
-              >
-                <span className="text-2xl">{event.icon}</span>
-                <span className="font-medium text-gray-800">{event.name}</span>
-              </div>
-            ))}
+
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/events/etkinlik-turleri.jpg"
+              alt="Düzenleyebileceğiniz Etkinlik Türleri"
+              width={1200}
+              height={600}
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
 
