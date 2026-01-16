@@ -86,8 +86,8 @@ export default function Services() {
                 key={index}
                 className={`group rounded-2xl overflow-hidden border ${colors.border} hover:shadow-xl transition-all duration-300`}
               >
-                {/* Image - Square aspect ratio */}
-                <div className="relative aspect-square overflow-hidden">
+                {/* Image - Landscape aspect ratio */}
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
