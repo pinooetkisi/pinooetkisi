@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Services() {
   const eventTypes = [
     { name: "Robot Yarışmaları", icon: "🤖" },
@@ -7,44 +9,39 @@ export default function Services() {
     { name: "TÜBİTAK/TEKNOFEST Etkinlik Programları", icon: "🚀" },
   ];
 
-  const supports = [
+  const services = [
     {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
       title: "Güvenli Set Kiralama",
       description: "Sigortalı, bakımlı ve tam donanımlı STEM kitleri",
+      image: "/images/services/set-kiralama.jpg",
+      color: "blue",
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-        </svg>
-      ),
       title: "Online Uzman Danışmanlığı",
       description: "Video görüşme ile etkinlik öncesi ve sırası destek",
+      image: "/images/services/uzman-danismanlik.jpg",
+      color: "purple",
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
       title: "Pinoo 360 LMS Erişimi",
       description: "Öğrenci hazırlık sürecinde interaktif online eğitim",
+      image: "/images/services/lms-erisimi.jpg",
+      color: "emerald",
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-      ),
       title: "Etkinlik Kurgusu & Rehber",
       description: "Adım adım uygulama kılavuzları ve hazır senaryolar",
+      image: "/images/services/etkinlik-rehber.jpg",
+      color: "orange",
     },
   ];
+
+  const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
+    blue: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200" },
+    purple: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-200" },
+    emerald: { bg: "bg-emerald-50", text: "text-emerald-600", border: "border-emerald-200" },
+    orange: { bg: "bg-orange-50", text: "text-orange-600", border: "border-orange-200" },
+  };
 
   return (
     <section id="hizmetler" className="py-20 bg-white">
@@ -80,20 +77,38 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Supports Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {supports.map((support, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-colors group"
-            >
-              <div className="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                {support.icon}
+        {/* Services with Images - 2x2 Grid */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {services.map((service, index) => {
+            const colors = colorClasses[service.color];
+            return (
+              <div
+                key={index}
+                className={`group rounded-2xl overflow-hidden border ${colors.border} hover:shadow-xl transition-all duration-300`}
+              >
+                {/* Image */}
+                <div className="relative h-48 sm:h-56 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+
+                {/* Content */}
+                <div className={`p-6 ${colors.bg}`}>
+                  <h4 className={`text-xl font-bold mb-2 ${colors.text}`}>
+                    {service.title}
+                  </h4>
+                  <p className="text-gray-600">
+                    {service.description}
+                  </p>
+                </div>
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">{support.title}</h4>
-              <p className="text-gray-600 text-sm">{support.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA */}
