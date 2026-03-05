@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "bilim festivali",
     "eğitim sponsorluğu",
   ],
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
